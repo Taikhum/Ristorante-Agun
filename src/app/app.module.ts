@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import 'hammerjs';
 
@@ -22,6 +23,7 @@ import { DishService } from './services/dish.service';
 import { LeaderService} from './services/leader.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { Leader } from './shared/leader';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,16 +33,18 @@ import { Leader } from './shared/leader';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
     MatToolbarModule,MatListModule,
     FlexLayoutModule,MatGridListModule,
     MatCardModule,
-    MatButtonModule,AppRoutingModule
+    MatButtonModule,AppRoutingModule,MatDialogModule
 
   ],
+  entryComponents: [LoginComponent],
   providers: [DishService,LeaderService],
   bootstrap: [AppComponent]
 })
