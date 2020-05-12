@@ -20,6 +20,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import 'hammerjs';
 
@@ -41,9 +44,9 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule,
-    MatToolbarModule,MatListModule,
-    FlexLayoutModule,MatGridListModule,
+    BrowserModule, ReactiveFormsModule, BrowserAnimationsModule,
+    MatToolbarModule,MatListModule,MatSlideToggleModule,
+    FlexLayoutModule,MatGridListModule, MatSelectModule,
     MatCardModule, MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,FormsModule,
