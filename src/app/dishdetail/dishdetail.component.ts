@@ -50,7 +50,7 @@ export class DishdetailComponent implements OnInit {
   next: string;
   visibility = 'shown';
 
-  constructor(private dishservice: DishService, @Inject('BaseURL') private BaseURL,
+  constructor(private dishservice: DishService, @Inject('BaseURL') public BaseURL,
     private route: ActivatedRoute,
     private location: Location, private fb: FormBuilder) { this.createForm(); }
 
