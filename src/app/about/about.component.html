@@ -55,7 +55,7 @@
 
 
       <div fxFlex="40">
-      <mat-list fxFlex *ngIf="leaders">
+      <mat-list fxFlex *ngIf="leaders" [@expand]>
         <h2 matLine>Corporate Leadership</h2>
 
         <mat-list-item *ngFor="let leader of leaders">
