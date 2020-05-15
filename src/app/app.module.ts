@@ -30,10 +30,10 @@ import { baseURL } from './shared/baseurl';
 import { HttpModule } from '@angular/http';
 import 'hammerjs';
 
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { DishService } from './services/dish.service';
 import { LeaderService} from './services/leader.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { Leader } from './shared/leader';
 import { LoginComponent } from './login/login.component';
 import { PromotionService } from './services/promotion.service';
 @NgModule({
@@ -59,7 +59,7 @@ import { PromotionService } from './services/promotion.service';
 
   ],
   entryComponents: [LoginComponent],
-  providers: [DishService,LeaderService,PromotionService,
+  providers: [DishService,LeaderService,ProcessHTTPMsgService,PromotionService,
   { provide:'BaseURL',useValue:baseURL}],
   bootstrap: [AppComponent]
 })

@@ -15,7 +15,7 @@
             <hr>
           </mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="{{baseURL +dish.image}}" alt="{{dish.name}}">
+        <img mat-card-image src="{{BaseURL +dish.image}}" alt="{{dish.name}}">
       <mat-card-content>
         <p>{{dish.description}}</p>
       </mat-card-content>
@@ -60,7 +60,7 @@
 
 
   </div>
-  <form novalidate [formGroup]="commentForm" #cform="ngForm" (ngSubmit)="onSubmit()">
+  <form *ngIf="dish" novalidate [formGroup]="commentForm" #cform="ngForm" (ngSubmit)="onSubmit()">
     <p>
       <mat-form-field class="Full-width">
         <input matInput formControlName="author" placeholder="name" type="text" required>
@@ -88,7 +88,11 @@
     <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
 
   </form>
-  <div [hidden]="dish">
+  <div [hidden]="dish|| errMess">
     <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
   </div>
 </div>
