@@ -2,9 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1. (deprecated almost)
 
-## Install Node_modules
+## Install Node_modules and server
 
 Run `npm install` in the project folder on your CMD.
+then follow the readme found in json-server folder to setup the server.
 
 ## Development server
 
