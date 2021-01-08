@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  Reserve Table
+<span class="flex-spacer"></span>
+<button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+<p></p>
+
+<form class= "reservetableform" novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+      <p>Number of Tables
+        <mat-slider [max]=8 [min]=2 [thumbLabel]=1 [tickInterval]=1 [step]=1>
+
+        </mat-slider>
+      </p>
+      <p>Date :
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+      <p>Time :
+        <mat-form-field>
+          <mat-select placeholder="Suitable time" [(ngModel)]="selectedValue" name="time">
+            <mat-option *ngFor="let time of times" [value]="time.value">
+              {{time.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <span class="flex-spacer"></span>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid" >Reserve</button>    </mat-dialog-actions>
+  </form>

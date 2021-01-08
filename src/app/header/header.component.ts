@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
+import { ReservetableComponent  } from '../reservetable/reservetable.component';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,9 @@ export class HeaderComponent implements OnInit {
   }
   openLoginForm(){
     this.dialog.open(LoginComponent, {width:'500px', height:'450px'});
+  }
+  openReserveForm(){
+    this.dialog.open(ReservetableComponent, {width:'500px', height:'450px'});
   }
 
 }

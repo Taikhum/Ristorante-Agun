@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';
 import { HttpModule } from '@angular/http';
 import 'hammerjs';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { DishService } from './services/dish.service';
@@ -37,6 +39,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { PromotionService } from './services/promotion.service';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ReservetableComponent } from './reservetable/reservetable.component';
+import { MatDatepickerModule } from '@angular/material/datepicker'
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,19 +52,20 @@ import { HighlightDirective } from './directives/highlight.directive';
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    HighlightDirective
+    HighlightDirective,
+    ReservetableComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule,HttpModule,  BrowserAnimationsModule,
     MatToolbarModule,MatListModule,MatSlideToggleModule,
     FlexLayoutModule,MatGridListModule, MatSelectModule,
     MatCardModule, MatFormFieldModule,HttpClientModule,
-    MatInputModule,MatProgressSpinnerModule,
+    MatInputModule,MatProgressSpinnerModule,MatNativeDateModule,
     MatCheckboxModule,FormsModule,MatSliderModule,
-    MatButtonModule,AppRoutingModule,MatDialogModule
+    MatButtonModule,AppRoutingModule,MatDialogModule,MatRadioModule,MatDatepickerModule
 
   ],
-  entryComponents: [LoginComponent],
+  entryComponents: [LoginComponent,ReservetableComponent],
   providers: [DishService,LeaderService,ProcessHTTPMsgService,PromotionService,
   { provide:'BaseURL',useValue:baseURL}],
   bootstrap: [AppComponent]
